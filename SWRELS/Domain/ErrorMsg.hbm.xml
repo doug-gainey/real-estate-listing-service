@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SWRELS.Domain.ErrorMsg, SWRELS" table="ErrorMsg">
+		<id name="Id" type="Int32">
+			<column name="ErrorMsg_ID" sql-type="int" not-null="true" unique="true" index="PK_ErrorMsg"/>
+			<generator class="native" />
+		</id>
+
+		<!-- Properties -->
+		<property name="Message" type="String" column="ErrorMsg"/>
+    <property name="ProgNotes" type="String"/>
+		<property name="DateTimeStamp" type="DateTime"/>
+  </class>
+</hibernate-mapping>

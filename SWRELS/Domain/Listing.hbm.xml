@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SWRELS.Domain.Listing, SWRELS" table="Listing">
+		<id name="Id" type="Int32">
+			<column name="Listing_ID" sql-type="int" not-null="true" unique="true" index="PK_Listing"/>
+			<generator class="native" />
+		</id>
+
+		<!-- Properties -->
+    <property name="Title" type="String"/>
+    <property name="ListingPrice" type="Decimal"/>
+    <property name="ListingType" type="Int32" column="ListType_ID"/>
+    <property name="Area" type="Int16"/>
+    <property name="Address" type="String"/>
+    <property name="City" type="String"/>
+    <property name="State" type="String"/>
+    <property name="ZipCode" type="String"/>
+    <property name="County" type="String"/>
+    <property name="TaxMpNum" type="String"/>
+    <property name="LotSize" type="String"/>
+    <property name="Acreage" type="Decimal"/>
+    <property name="Description" type="String"/>
+    <property name="Directions" type="String"/>
+    <property name="ListDate" type="DateTime"/>
+    <property name="ExpireDate" type="DateTime"/>
+    <property name="WaterFront" type="Boolean"/>
+    <property name="SuiteUnit" type="String"/>
+    <property name="SubComplxComm" type="String"/>
+    <property name="ParcelNumber" type="String"/>
+    <property name="XtraAmment" type="String"/>
+    <property name="Featured" type="Boolean"/>
+    <property name="Closed" type="Boolean"/>
+    <property name="Pending" type="Boolean"/>
+
+    <many-to-one name="Agent" class="SWRELS.Domain.Agent, SWRELS" column="Agent_ID" cascade="all"/>
+    <many-to-one name="PropertyType" class="SWRELS.Domain.PropertyType, SWRELS" column="PropType_ID" cascade="all"/>
+
+    <bag name="Photos" inverse="true" generic="true" cascade="all">
+      <key column="Listing_ID"/>
+      <one-to-many class="SWRELS.Domain.ListingPhoto, SWRELS"/>
+    </bag>
+
+    <bag name="Features" inverse="true" generic="true" cascade="all">
+      <key column="Listing_ID"/>
+      <one-to-many class="SWRELS.Domain.Feature, SWRELS"/>
+    </bag>
+  </class>
+</hibernate-mapping>

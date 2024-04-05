@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SWRELS.Domain.Agent, SWRELS" table="Agent">
+		<id name="Id" type="Int32">
+			<column name="Agent_ID" sql-type="int" not-null="true" unique="true" index="PK_Agent"/>
+			<generator class="native" />
+		</id>
+
+		<!-- Properties -->
+		<property name="FirstName" type="String"/>
+		<property name="LastName" type="String"/>    
+    <property name="LoginName" type="String"/>
+    <property name="LoginPass" type="String"/>
+    <property name="AgencyName" type="String"/>
+    <property name="Address" type="String"/>
+    <property name="City" type="String"/>
+    <property name="State" type="String"/>
+    <property name="ZipCode" type="String"/>
+    <property name="PhoneNumber" type="String"/>
+    <property name="FaxNumber" type="String"/>
+    <property name="EmailAddress" type="String"/>
+    <property name="CharterMem" type="Boolean"/>
+    <property name="SignUpDate" type="DateTime"/>
+    <property name="LicNumber" type="Int32"/>
+    <property name="Active" type="Boolean"/>
+    <property name="CcFirstName" type="String"/>
+    <property name="CcLastName" type="String"/>
+    <property name="CardType" type="String"/>
+    <property name="CardNumber" type="String"/>
+    <property name="ExpireMonth" type="Int16"/>
+    <property name="ExpireYear" type="Int16"/>
+    <property name="SecurityCode" type="String"/>
+    <property name="Renewal" type="Int16"/>
+  </class>
+</hibernate-mapping>

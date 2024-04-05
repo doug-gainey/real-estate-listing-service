@@ -1,0 +1,3 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="validationsummary.ascx.cs" Inherits="controls_validationsummary" %>
+<asp:ValidationSummary ID="vsMain" DisplayMode="BulletList" ShowSummary="True" HeaderText="<div class='title'>The following errors occurred while processing your request:</div>" CssClass="error" runat="server" />
+<asp:CustomValidator ID="cvDefaultValidator" Display="None" runat="server" />

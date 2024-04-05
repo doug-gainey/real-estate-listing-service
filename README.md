@@ -1,0 +1,3 @@
+# Real Estate Listing Service
+
+This is a .NET project I worked on many years ago to develop a real estate listing service to market to realtors.  The mistake we made was shooting too high in trying to implement every feature (to compete with Zillow, Trulia, Realtor.com, etc) instead of getting a minium viable product out and separating ourselves by building tools catered to the realtors.  The project fizzled out before we ever got it released.  You live and learn...

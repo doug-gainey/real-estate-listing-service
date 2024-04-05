@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="SWRELS.Domain.MultiFamilyListing, SWRELS" table="MultiFamily">
+		<id name="Id" type="Int32">
+			<column name="MultiFamily_ID" sql-type="int" not-null="true" unique="true" index="PK_MultiFamily"/>
+			<generator class="native" />
+		</id>
+
+		<!-- Properties -->
+    <property name="SchoolDistrict" type="String"/>
+    <property name="TaxDistrict" type="String"/>
+    <property name="ForSale" type="Boolean"/>
+    <property name="ForExchange" type="Boolean"/>
+    <property name="ForLease" type="Boolean"/>
+    <property name="TotParking" type="Int16"/>
+    <property name="NumOfElev" type="Int16"/>
+    <property name="MinSqFoot" type="Int32"/>
+    <property name="MaxSqFoot" type="Int32"/>
+    <property name="EffRent" type="Int16"/>
+    <property name="OneBRent" type="Int16"/>
+    <property name="TwoBRent" type="Int16"/>
+    <property name="ThrBRent" type="Int16"/>
+    <property name="FreBRent" type="Int16"/>
+    <property name="FveBRent" type="Int16"/>
+    <property name="NearInterchange" type="String"/>
+    <property name="DistToInterc" type="Decimal"/>
+    <property name="YearBuilt" type="Int16"/>
+    <property name="PriorTo" type="Boolean"/>
+    <property name="YearRemod" type="Int16"/>
+
+    <many-to-one name="Listing" class="SWRELS.Domain.Listing, SWRELS" column="Listing_ID" cascade="all"/>
+  </class>
+</hibernate-mapping>
